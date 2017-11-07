@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     
-    func addLabel(_ view:UIView) {
+    @objc func addLabel(_ view:UIView) {
         
         let myFirstLabel = UILabel();
         
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     }
     
     
-    func addSecondLabel(_ view: UIView) {
+    @objc func addSecondLabel(_ view: UIView) {
         
         
         let newLabel : UILabel = UILabel(frame: CGRect(x:245, y: 115, width: 55, height:  22));      //values selected emperically
