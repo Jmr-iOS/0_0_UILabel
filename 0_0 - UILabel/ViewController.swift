@@ -1,15 +1,30 @@
-//
-//  ViewController.swift
-//  0_0 - Empty Template (Swift)
-//
-//  Created by Justin Reina on 11/12/15.
-//  Copyright © 2015 Jaostech. All rights reserved.
-//
-
+/************************************************************************************************************************************/
+/** @file       ViewController.swift
+ *  @project    0_0 - UILabel
+ *  @brief      example use of UILabel
+ *  @details    x
+ *
+ *  @author     Justin Reina, Firmware Engineer, Jaostech
+ *  @created    11/12/15
+ *  @last rev   12/19/17
+ *
+ *  @section    Opens
+ *      none current
+ *
+ *  @section    Legal Disclaimer
+ *      All contents of this source file and/or any other Jaostech related source files are the explicit property on Jaostech
+ *      Corporation. Do not distribute. Do not copy.
+ */
+/************************************************************************************************************************************/
 import UIKit
+
 
 class ViewController: UIViewController {
 
+    /********************************************************************************************************************************/
+    /** @fcn        viewDidLoad()                                                                                                   */
+    /*  @brief      x                                                                                                               */
+    /********************************************************************************************************************************/
     override func viewDidLoad() {
         super.viewDidLoad();
         
@@ -25,13 +40,13 @@ class ViewController: UIViewController {
     }
 
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning();
 
-        return;
-    }
     
-    
+
+    /********************************************************************************************************************************/
+    /** @fcn        addLabel(_ view:UIView)                                                                                         */
+    /*  @brief      x                                                                                                               */
+    /********************************************************************************************************************************/
     @objc func addLabel(_ view:UIView) {
         
         let myFirstLabel = UILabel();
@@ -44,7 +59,7 @@ class ViewController: UIViewController {
         
         myFirstLabel.frame = CGRect(x: 15, y: 54, width: 300, height: 500);
         
-        myFirstLabel.translatesAutoresizingMaskIntoConstraints = false;
+        myFirstLabel.translatesAutoresizingMaskIntoConstraints = true;
         
         view.addSubview(myFirstLabel);
         
@@ -52,8 +67,11 @@ class ViewController: UIViewController {
     }
     
     
+    /********************************************************************************************************************************/
+    /** @fcn        addSecondLabel(_ view: UIView)                                                                                  */
+    /*  @brief      x                                                                                                               */
+    /********************************************************************************************************************************/
     @objc func addSecondLabel(_ view: UIView) {
-        
         
         let newLabel : UILabel = UILabel(frame: CGRect(x:245, y: 115, width: 55, height:  22));      //values selected emperically
         
@@ -67,6 +85,16 @@ class ViewController: UIViewController {
         
         view.addSubview(newLabel);
         
+        return;
+    }
+    
+    
+    /********************************************************************************************************************************/
+    /** @fcn        didReceiveMemoryWarning()                                                                                       */
+    /*  @brief      x                                                                                                               */
+    /********************************************************************************************************************************/
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning();
         return;
     }
 }
