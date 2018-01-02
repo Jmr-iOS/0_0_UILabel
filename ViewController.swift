@@ -6,7 +6,7 @@
  *
  *  @author     Justin Reina, Firmware Engineer, Jaostech
  *  @created    11/12/15
- *  @last rev   12/19/17
+ *  @last rev   1/2/18
  *
  *  @section    Opens
  *      none current
@@ -39,9 +39,6 @@ class ViewController: UIViewController {
         return;
     }
 
-    
-
-    
 
     /********************************************************************************************************************************/
     /** @fcn        addLabel(_ view:UIView)                                                                                         */
@@ -49,19 +46,23 @@ class ViewController: UIViewController {
     /********************************************************************************************************************************/
     @objc func addLabel(_ view:UIView) {
         
-        let myFirstLabel = UILabel();
+        //Init
+        let myFirstLabel = UILabel();                                               /* init                                         */
         
-        myFirstLabel.text = "I made a label on the screen #toogood4you";
-        myFirstLabel.font = UIFont(name: "MarkerFelt-Thin", size: 45);
-        myFirstLabel.textColor = UIColor.red;
-        myFirstLabel.textAlignment = .center;
-        myFirstLabel.numberOfLines = 5;
+        //Setup
+        myFirstLabel.font = UIFont(name: "MarkerFelt-Thin", size: 45);              /* font selection                               */
+        myFirstLabel.textColor = UIColor.red;                                       /* color of text                                */
+        myFirstLabel.backgroundColor = UIColor.gray;                                /* color of background                          */
+        myFirstLabel.textAlignment = .center;                                       /* x-alignment of text                          */
+        myFirstLabel.numberOfLines = 5;                                             /* max num lines, '0' for Inf                   */
+        myFirstLabel.frame = CGRect(x: 15, y: 154, width: 300, height: 400);        /* location in view                             */
+        myFirstLabel.translatesAutoresizingMaskIntoConstraints = true;              /* allow constraints                            */
+
+        //Text
+        myFirstLabel.text = "I made a label on the screen #toogood4you";            /* set the displayed text                       */
         
-        myFirstLabel.frame = CGRect(x: 15, y: 54, width: 300, height: 500);
-        
-        myFirstLabel.translatesAutoresizingMaskIntoConstraints = true;
-        
-        view.addSubview(myFirstLabel);
+        //Add to view
+        view.addSubview(myFirstLabel);                                              /* add to view                                  */
         
         return;
     }
@@ -69,21 +70,30 @@ class ViewController: UIViewController {
     
     /********************************************************************************************************************************/
     /** @fcn        addSecondLabel(_ view: UIView)                                                                                  */
-    /*  @brief      x                                                                                                               */
+    /*  @brief      showing init(frame) and other options                                                                           */
     /********************************************************************************************************************************/
     @objc func addSecondLabel(_ view: UIView) {
         
-        let newLabel : UILabel = UILabel(frame: CGRect(x:245, y: 115, width: 55, height:  22));      //values selected emperically
+        let textColor  = UIColor.black;
+        let bkgndColor = UIColor(red: 255/255, green:  60/255, blue:  60/255, alpha: 1);
+        let labelFrame = CGRect(x:245, y: 170, width: 55, height:  22);
         
-        newLabel.font  =   UIFont(name: "HelveticaNeue", size: 13);
-        newLabel.text  =   "4:30 PM";
-        newLabel.textColor     = UIColor.black;
-        newLabel.textAlignment = NSTextAlignment.left;
-        newLabel.backgroundColor    = UIColor(red: 255/255, green:  60/255, blue:  60/255, alpha: 1);
-        newLabel.clipsToBounds      = true; //required in order for clipping to show!
-        newLabel.layer.cornerRadius = 12;
+        //Init
+        let newLabel : UILabel = UILabel(frame: labelFrame);
         
-        view.addSubview(newLabel);
+        //Setup
+        newLabel.font  =   UIFont(name: "HelveticaNeue", size: 13);                 /* font selection                               */
+        newLabel.textColor     = textColor;                                         /* color of text                                */
+        newLabel.textAlignment = NSTextAlignment.left;                              /* x-alignment of text                          */
+        newLabel.backgroundColor    = bkgndColor;                                   /* color of background                          */
+        newLabel.clipsToBounds      = true;                                         /* needed for corners                           */
+        newLabel.layer.cornerRadius = 12;                                           /* apply rounded corners to view edges          */
+        
+        //Text
+        newLabel.text  =   "4:30 PM";                                               /* set the displayed text                       */
+        
+        //Add to view
+        view.addSubview(newLabel);                                                  /* add to view                                  */
         
         return;
     }
